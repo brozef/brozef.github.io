@@ -8,8 +8,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Brozef`,
-  description: `Full-stack / Game Developer`,
+  title: `Brozef | Fullstack & Games`,
+  description: `Fullstack / Game Developer`,
   openGraph: {
     images: [],
   },
@@ -58,7 +58,7 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <div className="min-h-screen">{children}</div>
+        {children}
         <Footer />
       </body>
     </html>

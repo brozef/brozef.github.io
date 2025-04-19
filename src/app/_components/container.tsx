@@ -3,7 +3,7 @@ type Props = {
 };
 
 const Container = ({ children }: Props) => {
-  return <div>{children}</div>;
+  return <div className="flex flex-col flex-grow">{children}</div>;
 };
 
 export default Container;

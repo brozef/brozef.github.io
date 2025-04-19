@@ -8,12 +8,10 @@ export default function Index() {
   const allPosts = getAllPosts();
 
   return (
-    <main>
-      <Container>
-        <Intro />
-        <Hero />
-        {allPosts.length > 0 && <MoreStories posts={allPosts} />}
-      </Container>
+    <main className="flex flex-col min-h-screen">
+      <Intro />
+      <Hero />
+      {allPosts.length > 0 && <MoreStories posts={allPosts} />}
     </main>
   );
 }

@@ -3,20 +3,24 @@ import { ReactNode } from "react";
 type Props = {
   children?: ReactNode;
   href?: string;
-  inverse?: boolean
-  color?: string
+  inverse?: boolean;
+  square?:boolean;
 };
 
-export function Button({ children, href, inverse, color }: Props) {
+export function Button({ children, href, inverse, square }: Props) {
   
-  let className = "mx-3 font-bold pt-4 pb-1 pl-14 pr-6 lg:pl-12 lg:pr-3 duration-200 transition-colors mb-6 lg:mb-0 text-lg";
+  let className = `mx-3 font-bold pb-1 duration-200 transition-colors mb-6 lg:mb-0 text-right [&_img]:hover:invert [&_img]:transition-[filter] [&_img]:duration-200 `;
   
   if (inverse) {
-    color = color != null ? `[${color}]` : `black`;
-    className += ` text-${color} bg-white border border-white hover:bg-${color} hover:text-white `;
+    className += ` mix-blend-screen text-black bg-white hover:bg-transparent hover:text-white border border-white`;
   } else {
-    color = color != null ? `[${color}]` : `white`;
-    className += ` text-${color} bg-black hover:bg-${color} hover:text-black border border-black text-white`;
+    className += ` mix-blend-multiply text-white bg-black hover:bg-transparent hover:text-black border border-black`;
+  }
+
+  if (square) {
+    className += ` pt-2 lg:pl-2 pl-6 pr-6 lg:pr-2 `;
+  } else {
+    className += ` pt-4 lg:pl-12 pl-14 pr-6 lg:pr-3 `;
   }
 
   return (

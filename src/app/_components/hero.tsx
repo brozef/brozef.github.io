@@ -2,31 +2,34 @@ import { Button } from "./button";
 
 export function Hero() {
   return (
-    <section className="bg-[#bf4141] h-[calc(100vh-300px)]">
-      <div className="py-4 grid grid-cols-2 gap-4">
-        <div className="flex py-16 flex-row space-between h-[100vh]">
-            <Button inverse color="#bf4141">
+    <section className="bg-[#bf4141] flex-grow flex gap-4">
+        <div className="flex lg:pl-16 py-16 flex-col justify-end lg:justify-start gap-8 lg:gap-16 text-xs xl:text-lg">
+            <Button>
               Taurus
             </Button>
-            
-            <Button inverse color="#bf4141">
+            <Button>
               Pender
             </Button>
-            
-            <Button inverse color="#bf4141">
+            <Button >
               Vanguard Exiles
             </Button>
-
-            <Button inverse color="#bf4141">
+            <Button>
               Sackboy: A Big Adventure
             </Button>
         </div>
-        <div className="flex flex-col items-end">
-          <p className="text-white text-xl lg:text-2xl mr-10 w-[70%] max-w-[850px] text-justify font-extrabold border-white">
+
+        <div className="grow flex flex-col items-end">
+          <div className="flex w-full grow flex-col items-end bg-no-repeat xl:bg-auto xl:bg-right-top bg-cover" style={{
+            backgroundImage: 'url(/assets/ve_logo_main.png)',//SackboyBigAdventure.webp //ve_logo_main.png
+            mixBlendMode: 'multiply',
+            filter: 'url(#posterize) contrast(3) grayscale(1) brightness(3) saturate(0)',
+          }}>
+          </div>
+          <p className="text-white md:text-xl lg:text-2xl mt-5 mb-[-100px] mr-10 w-[70%] max-w-[850px] text-justify font-extrabold border-white absolute">
             Experienced in both creative and technical roles, with a passion for developing interactive applications and enhancing user experiences.
           </p>
         </div>
-      </div>
+
     </section>
   );
 }
