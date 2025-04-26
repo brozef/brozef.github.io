@@ -1,8 +1,10 @@
 import { ReactNode } from "react";
+import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
 
 type Props = {
   children?: ReactNode;
-  href?: string;
+  href: Url;
   inverse?: boolean;
   square?:boolean;
 };
@@ -18,17 +20,17 @@ export function Button({ children, href, inverse, square }: Props) {
   }
 
   if (square) {
-    className += ` pt-2 lg:pl-2 pl-6 pr-6 lg:pr-2 `;
+    className += ` pt-2 pl-2 pr-2 `;
   } else {
-    className += ` pt-4 lg:pl-12 pl-14 pr-6 lg:pr-3 `;
+    className += ` pt-4 lg:pl-12 pl-8 pr-3 `;
   }
 
   return (
-    <a
+    <Link
       href={href}
       className={className}
     >
       {children}
-    </a>
+    </Link>
   );
 }

@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <footer className=" border-t border-neutral-200">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+        <div className="py-28 flex flex-row items-center justify-center lg:justify-start ">
+          <div className="flex flex-row justify-center items-center slg:pl-4 lg:w-1/2">
             <Button href="mailto:brozef.dev@gmail.com">
               Mail me
             </Button>

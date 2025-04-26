@@ -7,7 +7,7 @@ export function Intro() {
       <span className="grayscale text-lg">🚴</span> Brisbane, Aus | Sat 4:00pm
       </p>
       <h1 className="text-right text-7xl md:text-9xl font-bold tracking-tighter leading-tight pr-2 md:pr-8">
-        Brozef.
+        Brozef
       </h1>
     </section>
   );
