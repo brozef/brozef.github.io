@@ -21,9 +21,9 @@ export function Carousel({ children }: Props) {
   {
     children.map((c, i) => {
       if (i !== childIndex) {
-        return <div key={i} className="duration-500 transition-opacity opacity-0 mix-blend-multiply">{c}</div>
+        return <div key={i} className="duration-1000 transition-opacity opacity-0 mix-blend-multiply">{c}</div>
       } else {
-        return <div key={i} className="duration-500 transition-opacity opacity-100 mix-blend-multiply">{c}</div>
+        return <div key={i} className="duration-1000 transition-opacity opacity-100 mix-blend-multiply">{c}</div>
       }
     })
   }
