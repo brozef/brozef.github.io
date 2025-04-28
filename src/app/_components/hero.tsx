@@ -1,34 +1,37 @@
-import { Button } from "./button";
+'use client'
+import { ReactNode, useEffect, useState } from "react";
 import { Carousel } from "./carousel";
 import { HeroImage } from "./hero-image";
 
+const data = [
+  {src:"/assets/SackboyBigAdventure.webp", title:"Sackboy: A Big Adventure", subtitle:"Gameplay, UI, Performance"},
+  {src:"/assets/ve_logo_main.png", title:"Vanguard Exiles", subtitle:"Gameplay, Simulation, Visualisation & Camera"}
+];
+
 export function Hero() {
+  const [ childIndex, setChildIndex ] = useState<number>(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log(childIndex)
+      setChildIndex((childIndex === data.length - 1 ? 0 : childIndex + 1));
+      return () => clearTimeout(timer);
+    }, 7000);
+  }, [childIndex]);
+
   return (
     <section className="bg-[#bf4141] flex-grow flex flex-col gap-4 overflow-hidden relative">
-        <Carousel>
-          <HeroImage src="/assets/SackboyBigAdventure.webp"/>
-          <HeroImage src="/assets/ve_logo_main.png"/>
-        </Carousel>
-        <div className="flex bg-black mix-blend-screen lg:pl-16 py-8 flex-col items-start justify-start gap-2 lg:gap-16 text-xs xl:text-lg z-10">
-            <Button inverse href="/">
-              Taurus
-            </Button>
-            <Button inverse href="/">
-              Pender
-            </Button>
-            <Button inverse href="/">
-              Vanguard Exiles
-            </Button>
-            <Button inverse href="#sackboy">
-              Sackboy: A Big Adventure
-            </Button>
-        </div>
-          <p className="text-white md:text-xl lg:text-2xl mt-5 mb-[-100px] mr-10 w-[70%] max-w-[850px] text-justify font-extrabold border-white lg:absolute z-10">
-            Gameplay Mechanics, Simulation, Visualisation & Camera 
-          </p>
-        
-          
-
+        {
+          data.map((item, i) => {
+            return <HeroImage 
+              key={i}
+              src={item.src} 
+              title={item.title}
+              subtitle={item.subtitle} 
+              visible={i === childIndex} 
+            />
+          })
+        }
     </section>
   );
 }

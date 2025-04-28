@@ -1,5 +1,5 @@
 'use client'
-import { ReactNode, useEffect, useState } from "react";4
+import { ReactNode, useEffect, useState } from "react";
 
 type Props = {
   children: ReactNode[];
