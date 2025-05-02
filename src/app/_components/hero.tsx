@@ -1,6 +1,5 @@
 'use client'
-import { ReactNode, useEffect, useState } from "react";
-import { Carousel } from "./carousel";
+import { useEffect, useState } from "react";
 import { HeroImage } from "./hero-image";
 
 const data = [
@@ -13,7 +12,6 @@ export function Hero() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log(childIndex)
       setChildIndex((childIndex === data.length - 1 ? 0 : childIndex + 1));
       return () => clearTimeout(timer);
     }, 7000);
