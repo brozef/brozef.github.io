@@ -5,7 +5,7 @@ import { Hero } from "@/app/_components/hero";
 export default function Index() {
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-[100svh]">
       <Intro />
       <Hero />
     </main>
