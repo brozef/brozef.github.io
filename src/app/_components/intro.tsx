@@ -8,8 +8,9 @@ export function Intro() {
     useEffect(() => {
       const timer = setTimeout(() => {
         setTimeStr(getMyCurrentTime());
-        return () => clearTimeout(timer);
       }, 60000);
+
+      return () => clearTimeout(timer);
     }, [timeStr]);
 
   return (
