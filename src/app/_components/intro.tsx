@@ -6,9 +6,10 @@ export function Intro() {
   const [ timeStr, setTimeStr ] = useState<string>(getMyCurrentTime());
   
     useEffect(() => {
+      const seconds = 60 - new Date().getSeconds();
       const timer = setTimeout(() => {
         setTimeStr(getMyCurrentTime());
-      }, 60000);
+      }, seconds * 1000);
 
       return () => clearTimeout(timer);
     }, [timeStr]);
