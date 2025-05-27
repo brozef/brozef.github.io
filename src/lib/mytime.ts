@@ -8,7 +8,7 @@ export type TimeInfo = {
 };
 
 export function getMyCurrentTime(): TimeInfo {
-   //convert clienttime to my timezone
+   //convert client time to my timezone
    const clientDate = new Date();
    const myDate = new Date(clientDate.toLocaleString("en-US", {timeZone: "Australia/Brisbane"}));
 
@@ -18,14 +18,21 @@ export function getMyCurrentTime(): TimeInfo {
    let activity = "./assets/couch.webp";
    if (day == 0 || day == 6) {
       //weekends
-      if (hours > 4 && hours < 12) {
+      if (day == 0 && hours > 4 && hours < 12) {
          activity = "./assets/cycle.webp";
-      } else if (hours > 20 || hours < 5) {
+      } else if ((day == 6 && hours > 5 && hours < 7)
+            || (day == 0 && hours > 16 && hours < 18)) {
+         activity = "./assets/couch.webp"; // todo: change to walk
+      } else if (hours > 20 || hours < 6) {
          activity = "./assets/sleep.webp";
       }
    } else {
       //weekdays
-      if (hours > 9 && hours < 17) {
+      if ((day == 2 || day == 4) && hours > 4 && hours < 9) {
+         activity = "./assets/cycle.webp";
+      } else if (hours > 5 && hours < 8) {
+         activity = "./assets/couch.webp"; // todo: change to walk
+      } else if (hours > 8 && hours < 18) {
          activity = "./assets/office.webp";
       } else if (hours > 20 || hours < 6) {
          activity = "./assets/sleep.webp";
