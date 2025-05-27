@@ -4,12 +4,16 @@ const formatter:Intl.DateTimeFormat = new Intl.DateTimeFormat('en-GB', options);
 export type TimeInfo = {
   time: string;
   activity: string;
+  secondsToMin: number;
 };
 
 export function getMyCurrentTime(): TimeInfo {
-   const date = new Date();
-   const day = date.getDay();
-   const hours = date.getHours();
+   //convert clienttime to my timezone
+   const clientDate = new Date();
+   const myDate = new Date(clientDate.toLocaleString("en-US", {timeZone: "Australia/Brisbane"}));
+
+   const day = myDate.getDay();
+   const hours = myDate.getHours();
 
    let activity = "./assets/couch.webp";
    if (day == 0 || day == 6) {
@@ -30,6 +34,7 @@ export function getMyCurrentTime(): TimeInfo {
 
    return {
       activity,
-      time: formatter.format(date)
+      time: formatter.format(clientDate),
+      secondsToMin: 60 - clientDate.getSeconds()
    };
 }
