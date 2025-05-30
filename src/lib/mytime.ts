@@ -22,7 +22,7 @@ export function getMyCurrentTime(): TimeInfo {
          activity = "./assets/cycle.webp";
       } else if ((day == 6 && hours > 5 && hours < 7)
             || (day == 0 && hours > 16 && hours < 18)) {
-         activity = "./assets/couch.webp"; // todo: change to walk
+         activity = "./assets/walk.webp";
       } else if (hours > 20 || hours < 6) {
          activity = "./assets/sleep.webp";
       }
@@ -31,7 +31,7 @@ export function getMyCurrentTime(): TimeInfo {
       if ((day == 2 || day == 4) && hours > 4 && hours < 9) {
          activity = "./assets/cycle.webp";
       } else if (hours > 5 && hours < 8) {
-         activity = "./assets/couch.webp"; // todo: change to walk
+         activity = "./assets/walk.webp";
       } else if (hours > 8 && hours < 18) {
          activity = "./assets/office.webp";
       } else if (hours > 20 || hours < 6) {
