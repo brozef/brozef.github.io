@@ -5,7 +5,7 @@ import { HeroImage } from "./hero-image";
 const data = [
   {src:"/assets/SackboyBigAdventure.webp", title:"Sackboy: A Big Adventure", subtitle:"Gameplay, User Interface, Performance, Unreal Engine 4"},
   {src:"/assets/ve_logo_main.png", title:"Vanguard Exiles", subtitle:"Gameplay, Simulation, Visualisation & Camera, Unity"},
-  {src:"/assets/gears.png", title:"Gears of War: Reloaded", subtitle:"User Interface, Engine, Unreal Engine 3"}
+  {src:"/assets/gears.png", title:"Gears of War: Reloaded", subtitle:"User Interface, Engine Improvements, Unreal Engine 3"}
 ];
 
 export function Hero() {
