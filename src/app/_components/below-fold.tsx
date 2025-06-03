@@ -9,9 +9,9 @@ export function BelowFold({ }: Props) {
         What I'm Doin'
       </h2>
       <div className="mx-10 mb-20">
-        Helping teams across the globe ship AAA titles, solve optimization challenges, and port console games to PC. Always looking for the next thing to sink my teeth into!
+        <p>Helping teams across the globe ship AAA titles, solve optimization challenges, and port console games to PC. Always looking for the next thing to sink my teeth into!</p>
         <br/>
-        An experienced software engineer with 10+ years in technical and creative roles in the game industry, my generalist skill set, UX understanding and backend tech exposure has enabled me to also act in full-stack developer roles in other industries.        
+        <p>An experienced software engineer with 10+ years in technical and creative roles in the game industry, my generalist skill set, UX understanding and backend tech exposure has enabled me to also act in full-stack developer roles in other industries.</p>
       </div>
     </section>
   );
