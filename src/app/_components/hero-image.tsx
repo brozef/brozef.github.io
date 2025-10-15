@@ -3,13 +3,14 @@ import { Url } from "next/dist/shared/lib/router/router";
 type Props = {
   src: Url;
   title: string;
+  link: string;
   subtitle: string;
   visible: boolean;
 };
 
-export function HeroImage({ src, visible, subtitle, title }: Props) {
+export function HeroImage({ src, visible, subtitle, title, link }: Props) {
   return (
-    <div className="w-[100%] h-[100%] absolute">      
+    <div className="w-[100%] h-[100%] absolute"  style={{pointerEvents: visible ? 'auto' : 'none'}}>      
         <div className="w-[100%] h-[100%] absolute bg-no-repeat bg-cover bg-[position:calc(50%+25vw)_0%] md:bg-[length:auto_150%] duration-1000 transition-opacity" style={{
             backgroundImage: `url(${src})`,
             mixBlendMode: 'multiply',
@@ -23,8 +24,8 @@ export function HeroImage({ src, visible, subtitle, title }: Props) {
                 {subtitle} 
             </p>
           </div>
-          <p>
-              {title} 
+          <p >
+              <a href={link} target="_blank">{title}</a>
           </p>
         </div>
     </div>

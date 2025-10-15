@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import { HeroImage } from "./hero-image";
 
 const data = [
-  {src:"/assets/gears.png", title:"Gears of War: Reloaded", subtitle:"User Interface, Engine Improvements, Unreal Engine 3"},
-  {src:"/assets/ve_logo_main.png", title:"Vanguard Exiles", subtitle:"Gameplay, Simulation, Visualisation & Camera, Unity"},
-  {src:"/assets/SackboyBigAdventure.webp", title:"Sackboy: A Big Adventure", subtitle:"Gameplay, User Interface, Performance, Unreal Engine 4"},
-  {src:"/assets/fn_vr.jpg", title:"Fruit Ninja VR", subtitle:"Gameplay Programmer, Steam, PSN, Unity"}
+  {src:"/assets/gears.png", title:"Gears of War: Reloaded", subtitle:"User Interface, Engine Improvements, Unreal Engine 3", link:"https://www.gearsofwar.com/games/gears-reloaded/"},
+  {src:"/assets/ve_logo_main.png", title:"Vanguard Exiles", subtitle:"Gameplay, Simulation, Visualisation & Camera, Unity", link:"https://vanguard-exiles.com/"},
+  {src:"/assets/SackboyBigAdventure.webp", title:"Sackboy: A Big Adventure", subtitle:"Gameplay, User Interface, Performance, Unreal Engine 4", link:"https://www.sumo-digital.com/games/sackboy-a-big-adventure/"},
+  {src:"/assets/fn_vr.jpg", title:"Fruit Ninja VR", subtitle:"Gameplay Programmer, Steam, PSN, Unity", link:"https://www.halfbrick.com/games/fruit-ninja-vr"}
 ];
 
 export function Hero() {
@@ -31,6 +31,7 @@ export function Hero() {
               key={i}
               src={item.src} 
               title={item.title}
+              link={item.link}
               subtitle={item.subtitle} 
               visible={i === childIndex} 
             />
