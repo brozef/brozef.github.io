@@ -25,7 +25,7 @@ export function Hero() {
   }, [childIndex, timer]);
 
   return (
-    <section className="bg-[#bf4141] flex-grow flex flex-col gap-1 justify-end overflow-hidden relative max-w-[1200px]">
+    <section className="bg-[#bf4141] flex-grow flex flex-col gap-1 justify-end overflow-hidden relative">
         {
           data.map((item, i) => {
             return <HeroImage 

@@ -15,7 +15,7 @@ export function Intro() {
     }, [timeInfo]);
 
   return (
-    <section className="flex-row flex justify-between items-end mt-10 md:mt-16 mb-2 bg-white max-w-[1200px]">
+    <section className="flex-row flex justify-between items-end mt-10 md:mt-16 mb-2 bg-white">
       <div className="flex items-center pl-3 md:pl-10 mb-3 lg:mb-4 gap-2 max-h-[32px] min-h-[32px]">
       {timeInfo.activity ? <img src={timeInfo.activity} style={{imageRendering: "pixelated"}} width="32" height="32"/> : null}
         <p className="text-justify [text-align-last:justify] text-[11px] leading-[16px] md:leading-[32px]">
