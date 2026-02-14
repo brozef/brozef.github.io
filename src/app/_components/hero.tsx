@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { HeroImage } from "./hero-image";
 
 const data = [
+  {src:"/assets/exodus.jpg", title:"Exodus", subtitle:"Animation Engineering, Gameplay, Unreal Engine 5", link:"https://www.exodusgame.com/"},
   {src:"/assets/gears.png", title:"Gears of War: Reloaded", subtitle:"User Interface, Engine Improvements, Unreal Engine 3", link:"https://www.gearsofwar.com/games/gears-reloaded/"},
   {src:"/assets/ve_logo_main.png", title:"Vanguard Exiles", subtitle:"Gameplay, Simulation, Visualisation & Camera, Unity", link:"https://vanguard-exiles.com/"},
   {src:"/assets/SackboyBigAdventure.webp", title:"Sackboy: A Big Adventure", subtitle:"Gameplay, User Interface, Performance, Unreal Engine 4", link:"https://www.sumo-digital.com/games/sackboy-a-big-adventure/"},
-  {src:"/assets/fn_vr.jpg", title:"Fruit Ninja VR", subtitle:"Gameplay Programmer, Steam, PSN, Unity", link:"https://www.halfbrick.com/games/fruit-ninja-vr"}
+  {src:"/assets/fn_vr.jpg", title:"Fruit Ninja VR", subtitle:"Gameplay Programmer, Steam, PSN, Unity", link:"https://www.halfbrick.com/games/fruit-ninja-vr/"}
 ];
 
 export function Hero() {
@@ -24,7 +25,7 @@ export function Hero() {
   }, [childIndex, timer]);
 
   return (
-    <section className="bg-[#bf4141] flex-grow flex flex-col gap-1 justify-end overflow-hidden relative">
+    <section className="bg-[#bf4141] flex-grow flex flex-col gap-1 justify-end overflow-hidden relative max-w-[1200px]">
         {
           data.map((item, i) => {
             return <HeroImage 

@@ -7,7 +7,7 @@ export default function Index() {
 
   return (
     <div>
-      <main className="flex flex-col min-h-[600px] h-[100svh]">
+      <main className="flex flex-col min-h-[600px] h-[100svh] ">
         <Intro />
         <Hero />
       </main>
